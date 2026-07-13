@@ -1,4 +1,4 @@
-# AI Poem Generator
+# AI Running Plan Generator
 
 ## Overview
 
