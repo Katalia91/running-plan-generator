@@ -1,5 +1,5 @@
-function displayPoem(response) {
-  new Typewriter("#poem-content", {
+function displayPlan(response) {
+  new Typewriter("#plan-content", {
     strings: response.data.answer,
     autoStart: true,
     delay: 50,
@@ -7,9 +7,9 @@ function displayPoem(response) {
   });
 }
 
-function generatePoem(event) {
+function generatePlan(event) {
   event.preventDefault();
-  let poemContent = document.getElementById("poem-content");
+  let planContent = document.getElementById("plan-content");
   let userInput = document.querySelector("#prompt").value;
 
   const apiKey = "bab7d62a3b8o5fe03ce481f0a26t86db";
@@ -17,11 +17,11 @@ function generatePoem(event) {
   let prompt = `Generate a running plan based on these instructions: ${userInput}`;
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
-  poemContent.classList.toggle("hidden");
-  poemContent.innerHTML = `<span class="blink">⏳ Generating a running plan for: <strong>${userInput}</strong>...</span>`;
+  planContent.classList.toggle("hidden");
+  planContent.innerHTML = `<span class="blink">⏳ Generating a running plan for: <strong>${userInput}</strong>...</span>`;
 
-  axios.get(apiUrl).then(displayPoem);
+  axios.get(apiUrl).then(displayPlan);
 }
 
-let poemFormElement = document.querySelector("#poem-generator-form");
-poemFormElement.addEventListener("submit", generatePoem);
+let planFormElement = document.querySelector("#plan-generator-form");
+planFormElement.addEventListener("submit", generatePlan);
