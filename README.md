@@ -75,3 +75,6 @@ npm run sass
 
 [View the live app](https://natalias-ai-running-plan-generator.netlify.app/)
 
+## API & Security note
+The SheCodes API key was included directly in the client-side code for this educational project; although this is not recommended, the key was publicly provided to all course participants and was not a private credential.
+
